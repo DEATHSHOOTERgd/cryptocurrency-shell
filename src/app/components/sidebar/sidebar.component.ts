@@ -1,6 +1,8 @@
 import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
 import { NavigationService } from '../../services/navigation.service';
+import { environment } from '../../../environments/environment';
+import { tap } from 'rxjs';
 
 @Component({
   selector: 'app-sidebar',
@@ -12,12 +14,17 @@ import { NavigationService } from '../../services/navigation.service';
 export class SidebarComponent {
   isSidebarOpen = true;
 
-  constructor(private navigationService:NavigationService){
+  appRoutes:any[] = [];
 
+  constructor(private navigationService:NavigationService){
+    this.appRoutes=environment.appRoutes;
+    this.navigationService.isSidebarOpen$.pipe(tap(isSidebarOpen=>{
+      this.isSidebarOpen = isSidebarOpen;
+    })).subscribe();
   }
 
   toggleSidebar() {
-    this.isSidebarOpen = !this.isSidebarOpen;
+    this.navigationService.setIsSidebarOpen();
   }
 
   setAppUrl(url:string){

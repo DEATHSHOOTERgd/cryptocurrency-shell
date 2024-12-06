@@ -1,5 +1,7 @@
 @if(!isSidebarOpen){
+  <div class="sidebar" >
     <button (click)="toggleSidebar()" class="floating-menu menu-button" ><img src="assets/bglogo.jpg" alt="Banco Guaayquil logo"></button>
+  </div>    
 }
 @else{
     <div class="sidebar" [ngClass]="{ 'collapsed': !isSidebarOpen }">
@@ -10,8 +12,9 @@
           <h2>Cotizaciones</h2>
         </div>
         <ul class="sidebar-list">
-          <li class="sidebar-item"><a href="#" (click)="setAppUrl('')">Home</a></li>
-          <li class="sidebar-item"><a href="#" (click)="setAppUrl('')">About</a></li>
+          @for (route of appRoutes; track route.label) {
+            <li class="sidebar-item"><a href="#" (click)="setAppUrl(route.route)">{{route.label}}</a></li>
+          }
         </ul>
     </div>
 }

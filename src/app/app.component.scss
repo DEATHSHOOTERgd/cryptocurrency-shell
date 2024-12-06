@@ -1,0 +1,20 @@
+.main-content{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.side-section{
+    background-color: #df0081;
+    width: 200px;
+}
+.side-collapse{
+    width:50px;
+    background-color: #df0081;
+}
+
+iframe{
+  width: 100%;
+  height: 100%;
+  border: none;
+}
