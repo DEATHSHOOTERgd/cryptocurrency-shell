@@ -7,14 +7,16 @@
     background: none; 
     padding: 0;
     margin: 0; 
+    display: flex;
     font: inherit;
     color: inherit; 
     text-align: inherit;
     cursor: pointer;
     display: inline;
     img{
-        width: 90%;
+        width: 80%;
         margin: auto;
+        
     }
 }
 .sidebar {
@@ -32,7 +34,7 @@
     }
   
     .sidebar-header {
-      text-align: center;
+      margin-left: 1rem;
     }
   
     .sidebar-list {
@@ -44,7 +46,6 @@
         padding: 0;
         background-color: #df0081;
         transition: background-color 0.3s;
-  
         &:hover {
           background-color: white;
           color: df0081;
