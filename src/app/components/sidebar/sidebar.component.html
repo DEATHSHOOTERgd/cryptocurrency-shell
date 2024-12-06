@@ -1,0 +1,18 @@
+@if(!isSidebarOpen){
+    <button (click)="toggleSidebar()" class="floating-menu menu-button" ><img src="assets/bglogo.jpg" alt="Banco Guaayquil logo"></button>
+}
+@else{
+    <div class="sidebar" [ngClass]="{ 'collapsed': !isSidebarOpen }">
+        <button (click)="toggleSidebar()" class="menu-button">
+            <img src="assets/bg-logo-white.png" alt="Banco Guaayquil logo">
+        </button>
+        <div class="sidebar-header">
+          <h2>Cotizaciones</h2>
+        </div>
+        <ul class="sidebar-list">
+          <li class="sidebar-item"><a href="#" (click)="setAppUrl('')">Home</a></li>
+          <li class="sidebar-item"><a href="#" (click)="setAppUrl('')">About</a></li>
+        </ul>
+    </div>
+}
+
